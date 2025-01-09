@@ -10,27 +10,24 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Mass Education',
+  tagline: 'Human rights are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://kimboj23.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/MassEdu/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'kimboj23', // Usually your GitHub org/user name.
+  projectName: 'MassEdu', // Usually your repo name.
+  trailingSlash: false,
+  deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -42,11 +39,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          path: 'docs/course01',
+          routeBasePath: 'human-rights',
+          sidebarPath: './sidebars-course01.js',
+          editUrl: 'https://github.com/kimboj23/MassEdu/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -54,10 +50,7 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/kimboj23/MassEdu/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -70,27 +63,61 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'course2',
+        path: 'docs/course02',
+        routeBasePath: 'politics',
+        sidebarPath: require.resolve('./sidebars-course02.js'),
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Mass Education',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'dropdown',
+            label: 'Lớp Học',
             position: 'left',
-            label: 'Tutorial',
+            items: [
+              {
+                type: 'docSidebar',
+                sidebarId: 'docs',
+                label: 'Hạt mầm Nhân quyền',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'course2',
+                label: 'Chính trị Chính tôi',
+                docsPluginId: 'course2',
+              },
+            ],
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/kimboj23/MassEdu',
             label: 'GitHub',
             position: 'right',
           },
@@ -100,11 +127,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Lớp Học',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Hạt mầm Nhân quyền',
+                to: '/human-rights/tuan1/gioi-thieu',
+              },
+              {
+                label: 'Chính trị Chính tôi',
+                to: '/politics/chuong1/intro',
               },
             ],
           },
@@ -134,12 +165,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/kimboj23/MassEdu',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Mass Education. Dựng với khát vọng tự do và lòng yêu tri thức.`,
       },
       prism: {
         theme: prismThemes.github,

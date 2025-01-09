@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Hạt mầm Nhân quyền',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Khám phá các khái niệm cơ bản về nhân quyền và ý nghĩa của chúng trong đời sống.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Chính trị Chính tôi',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Tìm hiểu về hệ thống chính trị và vai trò của công dân trong xã hội dân chủ.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Bình dân học Luật',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Chỉ cần tâm trong sáng là có thể học được.
       </>
     ),
   },
