@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmass_edu_01=self.webpackChunkmass_edu_01||[]).push([[7562],{3541:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/MassEdu-01/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
